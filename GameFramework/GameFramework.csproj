@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0294CCC2-5C45-4012-A3CD-938D2AE89420}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GameFramework</RootNamespace>
+    <AssemblyName>GameFramework</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\A3Game\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrossMono, Version=1.0.5765.28048, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\A3Main\A3_U3D_MAIN\Assets\Libs\CrossMono.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CrossMonoUnityImpl, Version=1.0.5765.28429, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\A3Main\A3_U3D_MAIN\Assets\Libs\CrossMonoUnityImpl.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>..\..\A3Main\A3_U3D_MAIN\Assets\Libs\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>Libs\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Libs\UnityEngine.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AndroidSDK\GRGameSDK.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Conf\configParser.cs" />
+    <Compile Include="Conf\CLientConfig.cs" />
+    <Compile Include="Logic\LGAvatarBase.cs" />
+    <Compile Include="Logic\LGBase.cs" />
+    <Compile Include="Logic\LGClient.cs" />
+    <Compile Include="Logic\GMCommand.cs" />
+    <Compile Include="Game\gameMain.cs" />
+    <Compile Include="Game\clientBase.cs" />
+    <Compile Include="Game\IClientBase.cs" />
+    <Compile Include="Logic\LGDataBase.cs" />
+    <Compile Include="Media\IMediaClientBase.cs" />
+    <Compile Include="Net\ClientSession.cs" />
+    <Compile Include="Net\IMessageSend.cs" />
+    <Compile Include="Net\NetClient.cs" />
+    <Compile Include="Graph\LGGRBaseImpls.cs" />
+    <Compile Include="Graph\GRBaseImpls.cs" />
+    <Compile Include="Graph\GRClient.cs" />
+    <Compile Include="Net\MsgProcdures.cs" />
+    <Compile Include="QsmyUiLib\Baselayer.cs" />
+    <Compile Include="QsmyUiLib\conctorl\ScrollControler.cs" />
+    <Compile Include="QsmyUiLib\conctorl\Skin.cs" />
+    <Compile Include="QsmyUiLib\conctorl\TabControl.cs" />
+    <Compile Include="QsmyUiLib\conctorl\TabControler.cs" />
+    <Compile Include="QsmyUiLib\event\UiEventCenter.cs" />
+    <Compile Include="QsmyUiLib\GameJoyUI.cs" />
+    <Compile Include="QsmyUiLib\Window3d.cs" />
+    <Compile Include="QsmyUiLib\EventTriggerListener.cs" />
+    <Compile Include="QsmyUiLib\FightTextLayer.cs" />
+    <Compile Include="QsmyUiLib\FloatUi.cs" />
+    <Compile Include="QsmyUiLib\IBgLayerUI.cs" />
+    <Compile Include="QsmyUiLib\LoadingUI.cs" />
+    <Compile Include="QsmyUiLib\StoryUI.cs" />
+    <Compile Include="QsmyUiLib\Window.cs" />
+    <Compile Include="QSMY\AvatarBase.cs" />
+    <Compile Include="QSMY\utils\ScenceUtils.cs" />
+    <Compile Include="QSMY\utils\SimpleJSON.cs" />
+    <Compile Include="QSMY\utils\StringUtils.cs" />
+    <Compile Include="UI\BaseLGUI.cs" />
+    <Compile Include="UI\IUI.cs" />
+    <Compile Include="UI\UIAttAni\AttAniManager.cs" />
+    <Compile Include="UI\UIAttAni\DispAttAni.cs" />
+    <Compile Include="UI\UIbase.cs" />
+    <Compile Include="UI\UI_EVENT_DEFAULT.cs" />
+    <Compile Include="UI\UIClient.cs" />
+    <Compile Include="UI\UIAttAni\AttAni.cs" />
+    <Compile Include="util\event\GameEvent.cs" />
+    <Compile Include="util\event\GameEventDispatcher.cs" />
+    <Compile Include="util\event\GameEventDispatcherCollections.cs" />
+    <Compile Include="util\event\GAME_EVENT_DEFAULT.cs" />
+    <Compile Include="util\event\IGameEventDispatcher.cs" />
+    <Compile Include="util\event\IGameEventDispatcherCollections.cs" />
+    <Compile Include="util\event\taskEvent.cs" />
+    <Compile Include="util\event\gameEventDelegate.cs" />
+    <Compile Include="util\GameConstantDef.cs" />
+    <Compile Include="util\paramStruct.cs" />
+    <Compile Include="util\plugin\IObjectPlugin.cs" />
+    <Compile Include="util\plugin\OBJECT_NAME_DEF.cs" />
+    <Compile Include="util\processManager.cs" />
+    <Compile Include="util\process\IProcess.cs" />
+    <Compile Include="util\GameTools.cs" />
+    <Compile Include="util\process\ITimer.cs" />
+    <Compile Include="util\process\processQueue.cs" />
+    <Compile Include="util\timersManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

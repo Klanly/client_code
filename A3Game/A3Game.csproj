@@ -1,0 +1,702 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D227E5B5-3780-49F4-A532-41C447DD34AD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MuGame</RootNamespace>
+    <AssemblyName>MuGame</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrossMono">
+      <HintPath>..\..\A3Main\A3_U3D_MAIN\Assets\Libs\CrossMono.dll</HintPath>
+    </Reference>
+    <Reference Include="CrossMonoUnityImpl">
+      <HintPath>..\..\A3Main\A3_U3D_MAIN\Assets\Libs\CrossMonoUnityImpl.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\GameFramework\Libs\DOTween.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GameFramework">
+      <HintPath>..\..\A3Main\A3_U3D_MAIN\Assets\Libs\GameFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\GameFramework\Libs\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\GameFramework\Libs\UnityEngine.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AndroidSDKManager\AndroidStatusBar.cs" />
+    <Compile Include="AndroidSDKManager\GameSdk\GameSdkMgr.cs" />
+    <Compile Include="AndroidSDKManager\GameSdk\GameSdk_base.cs" />
+    <Compile Include="AndroidSDKManager\GameSdk\GameSdk_DL.cs" />
+    <Compile Include="AndroidSDKManager\GameSdk\GameSdk_quick.cs" />
+    <Compile Include="AndroidSDKManager\GameSdk\GameSdk_ryjtDream.cs" />
+    <Compile Include="Game\GAMEAPI.cs" />
+    <Compile Include="Media\MediaClientBase.cs" />
+    <Compile Include="Qsmy\mgr\gameRoomItems\CityWarRoom.cs" />
+    <Compile Include="Qsmy\mgr\gameRoomItems\DragonRoom.cs" />
+    <Compile Include="Qsmy\mgr\gameRoomItems\JDZCRoom.cs" />
+    <Compile Include="Qsmy\mgr\gameRoomItems\TlfbRoom109.cs" />
+    <Compile Include="Qsmy\mgr\gameRoomItems\TlfbRoom110.cs" />
+    <Compile Include="Qsmy\mgr\gameRoomItems\TlfbRoom111.cs" />
+    <Compile Include="Qsmy\mgr\IconAddLightMgr.cs" />
+    <Compile Include="Qsmy\mgr\IconHintMgr.cs" />
+    <Compile Include="Qsmy\model\A3_activeDegreeModel.cs" />
+    <Compile Include="Qsmy\model\a3_ActiveOnlineModel.cs" />
+    <Compile Include="Qsmy\model\A3_cityOfWarModel.cs" />
+    <Compile Include="Qsmy\model\a3_counterpartModel.cs" />
+    <Compile Include="Qsmy\model\A3_dartModel.cs" />
+    <Compile Include="Qsmy\model\A3_FashionShowModel.cs" />
+    <Compile Include="Qsmy\model\A3_HallowsModel.cs" />
+    <Compile Include="Qsmy\model\a3_newActiveModel.cs" />
+    <Compile Include="Qsmy\model\A3_RideModel.cs" />
+    <Compile Include="Qsmy\model\A3_RollModel.cs" />
+    <Compile Include="Qsmy\model\A3_RuneStoneModel.cs" />
+    <Compile Include="Qsmy\model\A3_SevendayModel.cs" />
+    <Compile Include="Qsmy\model\A3_SlayDragonModel.cs" />
+    <Compile Include="Qsmy\model\a3_sportsModel.cs" />
+    <Compile Include="Qsmy\model\notice_model.cs" />
+    <Compile Include="Qsmy\proxy\a3_activeDegreeProxy.cs" />
+    <Compile Include="Qsmy\proxy\a3_activeOnlineProxy.cs" />
+    <Compile Include="Qsmy\proxy\A3_cityOfWarProxy.cs" />
+    <Compile Include="Qsmy\proxy\a3_dartproxy.cs" />
+    <Compile Include="Qsmy\proxy\a3_fashionshowProxy.cs" />
+    <Compile Include="Qsmy\proxy\A3_HallowsProxy.cs" />
+    <Compile Include="Qsmy\proxy\a3_newActiveProxy.cs" />
+    <Compile Include="Qsmy\proxy\A3_RideProxy.cs" />
+    <Compile Include="Qsmy\proxy\a3_RuneStoneProxy.cs" />
+    <Compile Include="Qsmy\proxy\A3_SevenDayProxy.cs" />
+    <Compile Include="Qsmy\proxy\A3_SlayDragonProxy.cs" />
+    <Compile Include="Qsmy\proxy\a3_sportsProxy.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_activeOnline.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_activeDegree.cs" />
+    <Compile Include="AndroidSDKManager\AndroidSDKManager.cs" />
+    <Compile Include="AndroidSDKManager\AndroidPlotformSDK.cs" />
+    <Compile Include="AndroidSDKManager\AnyPlotformSDK.cs" />
+    <Compile Include="AndroidSDKManager\IOSPlatformSDK.cs" />
+    <Compile Include="AndroidSDKManager\PlotformBaseSDK.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="camera\SceneCamera.cs" />
+    <Compile Include="Conf\ClientConfigs\ClientActivityViewConf.cs" />
+    <Compile Include="Conf\ClientConfigs\ClientAIConf.cs" />
+    <Compile Include="Conf\ClientConfigs\ClientFWGameConf.cs" />
+    <Compile Include="Conf\ClientConfigs\ClientGeneralConf.cs" />
+    <Compile Include="Conf\ClientConfigs\ClientGrdConfig.cs" />
+    <Compile Include="Conf\ClientConfigs\ClientGuideConf.cs" />
+    <Compile Include="Conf\ClientConfigs\ClientImgResConf.cs" />
+    <Compile Include="Conf\ClientConfigs\ClientItemsConf.cs" />
+    <Compile Include="Conf\ClientConfigs\ClientMarketConf.cs" />
+    <Compile Include="Conf\ClientConfigs\ClientOutGameConf.cs" />
+    <Compile Include="Conf\ClientConfigs\ClientShieldConf.cs" />
+    <Compile Include="Conf\ClientConfigs\ClientSkillConf.cs" />
+    <Compile Include="Conf\ClientConfigs\ClientSystemConf.cs" />
+    <Compile Include="Conf\ClientConfigs\ClientSystemOpenConf.cs" />
+    <Compile Include="Conf\ClientConfigs\ClientTriggerConf.cs" />
+    <Compile Include="Conf\ClientConfigs\ClientVipConf.cs" />
+    <Compile Include="Conf\ClientConfigs\svrClient\SvrCarrLvlConfig.cs" />
+    <Compile Include="Conf\ClientConfigs\svrClient\SvrGeneralConfig.cs" />
+    <Compile Include="Conf\ClientConfigs\svrClient\SvrItemConfig.cs" />
+    <Compile Include="Conf\ClientConfigs\svrClient\SvrLevelConfig.cs" />
+    <Compile Include="Conf\ClientConfigs\svrClient\SvrMapConfig.cs" />
+    <Compile Include="Conf\ClientConfigs\svrClient\SvrMarketConfig.cs" />
+    <Compile Include="Conf\ClientConfigs\svrClient\SvrMeriConfig.cs" />
+    <Compile Include="Conf\ClientConfigs\svrClient\SvrMissionConfig.cs" />
+    <Compile Include="Conf\ClientConfigs\svrClient\SvrMonsterConfig.cs" />
+    <Compile Include="Conf\ClientConfigs\svrClient\SvrNpcConfig.cs" />
+    <Compile Include="Conf\ClientConfigs\svrClient\SvrSkillConfig.cs" />
+    <Compile Include="Conf\ConfigUtil.cs" />
+    <Compile Include="Conf\muCLientConfig.cs" />
+    <Compile Include="Enum\EnumAni.cs" />
+    <Compile Include="Enum\EnumCommon.cs" />
+    <Compile Include="Enum\EnumLayer.cs" />
+    <Compile Include="Enum\EnumMaterial.cs" />
+    <Compile Include="Enum\EnumShader.cs" />
+    <Compile Include="Enum\EnumTFX.cs" />
+    <Compile Include="fight\FollowBullet_Mgr.cs" />
+    <Compile Include="fight\monster_event\M00000_Default_Event.cs" />
+    <Compile Include="fight\monster_event\M0x000_Role_Event.cs" />
+    <Compile Include="fight\monster_event\M10001_Dyzhs_Event.cs" />
+    <Compile Include="fight\monster_event\M10002_Srg_Event.cs" />
+    <Compile Include="fight\monster_event\M10003_Stl_Event.cs" />
+    <Compile Include="fight\monster_event\Monster_Base_Event.cs" />
+    <Compile Include="fight\monster_event\MS0000_Default_Event.cs" />
+    <Compile Include="fight\profession_event\P4Archer_Event.cs" />
+    <Compile Include="fight\HitPoint.cs" />
+    <Compile Include="fight\HurtPoint.cs" />
+    <Compile Include="fight\profession_event\P3Mage_Event.cs" />
+    <Compile Include="fight\profession_event\P5Assassin_Event.cs" />
+    <Compile Include="fight\profession_event\Profession_Base_Event.cs" />
+    <Compile Include="fight\profession_event\P2Warrior_Event.cs" />
+    <Compile Include="fight\summon_event\Summon_Base_Event.cs" />
+    <Compile Include="fight\Temp_Event.cs" />
+    <Compile Include="Game\gameST.cs" />
+    <Compile Include="Game\MuMain.cs" />
+    <Compile Include="Game\U3DAPI.cs" />
+    <Compile Include="Graph\GraphImpls\GRHero.cs" />
+    <Compile Include="Graph\GraphImpls\GrMonsterAvatar.cs" />
+    <Compile Include="Graph\GraphImpls\GrPlayerAvatar.cs" />
+    <Compile Include="Graph\GraphImpls\GRUsrplayerAvatar.cs" />
+    <Compile Include="Graph\LGGraphImpls\LGGRAvatar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Graph\LGGraphImpls\LGGRAvatarHero.cs" />
+    <Compile Include="Graph\LGGraphImpls\LGGRAvatarMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Graph\LGGraphImpls\LGGRAvatarMonster.cs" />
+    <Compile Include="Graph\LGGraphImpls\LGGRAvatarNpc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Graph\LGGraphImpls\LGGRAvatarOtherPlayer.cs" />
+    <Compile Include="Graph\LGGraphImpls\LGGRCamera.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Graph\LGGraphImpls\LGGRMap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logic\DelayDoManager.cs" />
+    <Compile Include="Logic\EffMgr.cs" />
+    <Compile Include="Logic\GameData\chatInfo.cs" />
+    <Compile Include="Logic\GameData\missionInfo.cs" />
+    <Compile Include="Logic\GameData\smithyInfo.cs" />
+    <Compile Include="Logic\GameData\shopInfo.cs" />
+    <Compile Include="Logic\inGame\LGGDLevels.cs" />
+    <Compile Include="Logic\inGame\scene\LGAvatar.cs" />
+    <Compile Include="Logic\inGame\scene\LGAvatarGameInst.cs" />
+    <Compile Include="Logic\inGame\scene\LGAvatarHero.cs" />
+    <Compile Include="Logic\inGame\scene\LGAvatarMonster.cs" />
+    <Compile Include="Logic\inGame\scene\LGAvatarNpc.cs" />
+    <Compile Include="Logic\inGame\scene\LGAvatarOther.cs" />
+    <Compile Include="Logic\inGame\scene\LGCamera.cs" />
+    <Compile Include="Logic\inGame\scene\LGDropItemManager.cs" />
+    <Compile Include="Logic\inGame\scene\LGHeros.cs" />
+    <Compile Include="Logic\inGame\scene\LGMap.cs" />
+    <Compile Include="Logic\inGame\scene\LGMonsters.cs" />
+    <Compile Include="Logic\inGame\scene\LGNpc.cs" />
+    <Compile Include="Logic\inGame\scene\LGNpcs.cs" />
+    <Compile Include="Logic\inGame\scene\LGOthers.cs" />
+    <Compile Include="Logic\inGame\scene\lgSelfPlayer.cs" />
+    <Compile Include="Logic\inGame\scene\NavContorler.cs" />
+    <Compile Include="Logic\muLGClient.cs" />
+    <Compile Include="Logic\inGame\LGJoinWorld.cs" />
+    <Compile Include="Logic\outGame\LGLoadResource.cs" />
+    <Compile Include="Logic\outGame\LGOutGame.cs" />
+    <Compile Include="Logic\outGame\LGPlatInfo.cs" />
+    <Compile Include="Logic\GameData\charsInfo.cs" />
+    <Compile Include="Logic\GameData\itemsInfo.cs" />
+    <Compile Include="Logic\GameData\joinWorldInfo.cs" />
+    <Compile Include="Logic\GameData\_connInfo.cs" />
+    <Compile Include="Logic\XMLMgr.cs" />
+    <Compile Include="Media\MediaClient.cs" />
+    <Compile Include="Net\MsgProcs\InGameGeneralMsgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Net\MsgProcs\InGameLevelMsgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Net\MsgProcs\InGameMapMsgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Net\MsgProcs\InGamePalyerInfoMsgs.cs" />
+    <Compile Include="Net\MsgProcs\OutGameMsgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Net\muNetCleint.cs" />
+    <Compile Include="Net\PKG_NAME.cs" />
+    <Compile Include="Graph\GraphImpls\GRAvatar.cs" />
+    <Compile Include="Graph\GraphImpls\GRMap.cs" />
+    <Compile Include="Graph\GraphImpls\GRCamera.cs" />
+    <Compile Include="Graph\muGRClient.cs" />
+    <Compile Include="Qsmy\conf\MonsterConfig.cs" />
+    <Compile Include="Qsmy\conf\SkillConf.cs" />
+    <Compile Include="Qsmy\core\Globle.cs" />
+    <Compile Include="Qsmy\core\GlobleSetting.cs" />
+    <Compile Include="Qsmy\core\PlayeLocalInfo.cs" />
+    <Compile Include="Qsmy\mgr\AttackPointMgr.cs" />
+    <Compile Include="Qsmy\mgr\ContMgr.cs" />
+    <Compile Include="Qsmy\mgr\DoAfterMgr.cs" />
+    <Compile Include="Qsmy\mgr\DropItemUIMgr.cs" />
+    <Compile Include="Qsmy\mgr\FileMgr.cs" />
+    <Compile Include="Qsmy\mgr\FunctionOpenMgr.cs" />
+    <Compile Include="Qsmy\mgr\GameCameraMgr.cs" />
+    <Compile Include="Qsmy\mgr\gameRoomItems\ArenaRoom.cs" />
+    <Compile Include="Qsmy\mgr\gameRoomItems\BaseRoomItem.cs" />
+    <Compile Include="Qsmy\mgr\gameRoomItems\ExpRoom.cs" />
+    <Compile Include="Qsmy\mgr\gameRoomItems\FSWZRoom.cs" />
+    <Compile Include="Qsmy\mgr\gameRoomItems\INameObj.cs" />
+    <Compile Include="Qsmy\mgr\gameRoomItems\MLZDRoom.cs" />
+    <Compile Include="Qsmy\mgr\gameRoomItems\MoneyRoom.cs" />
+    <Compile Include="Qsmy\mgr\gameRoomItems\PlotRoom.cs" />
+    <Compile Include="Qsmy\mgr\gameRoomItems\PVPRoom.cs" />
+    <Compile Include="Qsmy\mgr\gameRoomItems\roomItems\DropItem.cs" />
+    <Compile Include="Qsmy\mgr\gameRoomItems\WdsyRoom.cs" />
+    <Compile Include="Qsmy\mgr\gameRoomItems\ZHSLYRoom.cs" />
+    <Compile Include="Qsmy\mgr\GameRoomMgr.cs" />
+    <Compile Include="Qsmy\mgr\HeroMgr.cs" />
+    <Compile Include="Qsmy\mgr\httpapp\GiftCardsApp.cs" />
+    <Compile Include="Qsmy\mgr\httpapp\HttpAppMgr.cs" />
+    <Compile Include="Qsmy\mgr\KeyWord.cs" />
+    <Compile Include="Qsmy\mgr\MapEffMgr.cs" />
+    <Compile Include="Qsmy\mgr\MouseClickMgr.cs" />
+    <Compile Include="Qsmy\mgr\newbie\NbChangeWorld.cs" />
+    <Compile Include="Qsmy\mgr\newbie\NbCheckItems.cs" />
+    <Compile Include="Qsmy\mgr\newbie\NbClick.cs" />
+    <Compile Include="Qsmy\mgr\newbie\NbDelay.cs" />
+    <Compile Include="Qsmy\mgr\newbie\NbDoItems.cs" />
+    <Compile Include="Qsmy\mgr\newbie\NbFBInit.cs" />
+    <Compile Include="Qsmy\mgr\newbie\NbGo.cs" />
+    <Compile Include="Qsmy\mgr\newbie\NbLevel.cs" />
+    <Compile Include="Qsmy\mgr\newbie\NbNewSkill.cs" />
+    <Compile Include="Qsmy\mgr\newbie\NbStop.cs" />
+    <Compile Include="Qsmy\mgr\newbie\NbTask.cs" />
+    <Compile Include="Qsmy\mgr\newbie\NbWinClose.cs" />
+    <Compile Include="Qsmy\mgr\newbie\NbWinOpen.cs" />
+    <Compile Include="Qsmy\mgr\newbie\NbWipeOutOver.cs" />
+    <Compile Include="Qsmy\mgr\newbie\NewbieModel.cs" />
+    <Compile Include="Qsmy\mgr\newbie\NewbieTeachItem.cs" />
+    <Compile Include="Qsmy\mgr\newbie\NewbieTeachMgr.cs" />
+    <Compile Include="Qsmy\mgr\PlayerChatUIMgr.cs" />
+    <Compile Include="Qsmy\mgr\PlayerNameUIMgr.cs" />
+    <Compile Include="Qsmy\mgr\RoleMgr.cs" />
+    <Compile Include="Qsmy\mgr\TickMgr.cs" />
+    <Compile Include="Qsmy\mgr\VipMgr.cs" />
+    <Compile Include="Qsmy\model\A3_BuffModel.cs" />
+    <Compile Include="Qsmy\model\A3_EliteMonsterModel.cs" />
+    <Compile Include="Qsmy\model\A3_LegionModel.cs" />
+    <Compile Include="Qsmy\model\A3_MailModel.cs" />
+    <Compile Include="Qsmy\model\A3_NPCShopModel.cs" />
+    <Compile Include="Qsmy\model\A3_PetModel.cs" />
+    <Compile Include="Qsmy\model\a3_rankingModel.cs" />
+    <Compile Include="Qsmy\model\A3_SmithyModel.cs" />
+    <Compile Include="Qsmy\model\a3_speedTeamModel.cs" />
+    <Compile Include="Qsmy\model\A3_TeamModel.cs" />
+    <Compile Include="Qsmy\model\a3_ygyiwuModel.cs" />
+    <Compile Include="Qsmy\model\AutoPlayModel.cs" />
+    <Compile Include="Qsmy\model\FindBestoModel.cs" />
+    <Compile Include="Qsmy\model\ResetLvLAwardModel.cs" />
+    <Compile Include="Qsmy\model\ResetLvLModel.cs" />
+    <Compile Include="Qsmy\model\ExchangeModel.cs" />
+    <Compile Include="Qsmy\model\OffLineModel.cs" />
+    <Compile Include="Qsmy\model\A3_WingModel.cs" />
+    <Compile Include="Qsmy\model\A3_VipModel.cs" />
+    <Compile Include="Qsmy\model\A3_AchievementModel.cs" />
+    <Compile Include="Qsmy\model\WelfareModel.cs" />
+    <Compile Include="Qsmy\proxy\A3_BeStrongerProxy.cs" />
+    <Compile Include="Qsmy\proxy\A3_LegionProxy.cs" />
+    <Compile Include="Qsmy\proxy\A3_NPCShopProxy.cs" />
+    <Compile Include="Qsmy\proxy\a3_rankingProxy.cs" />
+    <Compile Include="Qsmy\proxy\A3_SmithyProxy.cs" />
+    <Compile Include="Qsmy\proxy\a3_speedTeamProxy.cs" />
+    <Compile Include="Qsmy\proxy\A3_TaskProxy.cs" />
+    <Compile Include="Qsmy\proxy\a3_teamMemberList.cs" />
+    <Compile Include="Qsmy\proxy\A3_ygyiwuProxy.cs" />
+    <Compile Include="Qsmy\proxy\ChangeLineProxy.cs" />
+    <Compile Include="Qsmy\proxy\EliteMonsterProxy.cs" />
+    <Compile Include="Qsmy\proxy\FindBestoProxy.cs" />
+    <Compile Include="Qsmy\proxy\welfareProxy.cs" />
+    <Compile Include="Qsmy\proxy\TeamProxy.cs" />
+    <Compile Include="Qsmy\ui\a3\A3_ActiveModel.cs" />
+    <Compile Include="Qsmy\ui\a3\A3_ActiveProxy.cs" />
+    <Compile Include="Qsmy\proxy\A3_MailProxy.cs" />
+    <Compile Include="Qsmy\proxy\A3_PetProxy.cs" />
+    <Compile Include="Qsmy\proxy\ExchangeProxy.cs" />
+    <Compile Include="Qsmy\proxy\ResetLvLProxy.cs" />
+    <Compile Include="Qsmy\proxy\A3_WingProxy.cs" />
+    <Compile Include="Qsmy\proxy\A3_VipProxy.cs" />
+    <Compile Include="Qsmy\ui\a3\a3tips_summon.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_active.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_active_godlight.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_attChange.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_auction.cs" />
+    <Compile Include="Qsmy\ui\a3\A3_AuctionModel.cs" />
+    <Compile Include="Qsmy\ui\a3\A3_AuctionProxy.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_autoplay.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_autoplay2.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_bossranking.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_changeName.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_cityWarTip.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_doubleExp.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_fashionshow.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_legion_build.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_onerecharge.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_RollItem.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_autoplay_eqp.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_autoplay_pick.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_autoplay_skill.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_awardCenter.cs" />
+    <Compile Include="Qsmy\ui\a3\A3_AwardCenterServer.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_BagModel.cs" />
+    <Compile Include="Qsmy\model\ArenaModel.cs" />
+    <Compile Include="Qsmy\model\BaseItemData.cs" />
+    <Compile Include="Qsmy\model\EquipModel.cs" />
+    <Compile Include="Qsmy\model\E_mailModel.cs" />
+    <Compile Include="Qsmy\model\GameConfig.cs" />
+    <Compile Include="Qsmy\model\BagModel.cs" />
+    <Compile Include="Qsmy\model\LotteryModel.cs" />
+    <Compile Include="Qsmy\model\ModelBase.cs" />
+    <Compile Include="Qsmy\model\PlayerModel.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_baotuUI.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_beRequestFriend.cs" />
+    <Compile Include="Qsmy\ui\a3\A3_BeStronger.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_blessing.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_buff.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_chapter_hint.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_chatroom.cs" />
+    <Compile Include="Qsmy\ui\a3\A3_cityOfWar.cs" />
+    <Compile Include="Qsmy\ui\a3\A3_ClanTaskOpt.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_counterpart.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_currentTeamInfo.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_currentTeamPanel.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_doing.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_dyetip.cs" />
+    <Compile Include="Qsmy\ui\a3\A3_EliteMonster.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_eqpInherit.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_EquipModel.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_equipup.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_everydayLogin.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_fb_team.cs" />
+    <Compile Include="Qsmy\ui\a3\A3_FindBesto.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_firstRechargeAward.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_friend.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_funcopen.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_getGoldWay.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_getJewelryWay.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_giftCard.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_hallows.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_HeroTitleServer.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_honor.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_honorPow_up.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_honor_pow.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_hudun.cs" />
+    <Compile Include="Qsmy\ui\a3\A3_HudunProxy.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_interactOtherUI.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_itemLack.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_itemtip.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_exchange.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_insedeui_fb.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_jdzc_cd.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_jdzc_zhanji.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_legion.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_legion_dart.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_LHlianjie.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_liteMiniBaseMap.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_liteMiniBaseMap1.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_liteMiniBaseMap2.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_liteMinimap.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_lottery.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_lowblood.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_lvup.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_mail.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_mapChangeLine.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_mapname.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_miniTip.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_mwlrchange.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_newActive.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_new_pet.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_npc_shop.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_pet_renew.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_pet_skin.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_pkMapUI.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_pkmodel.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_PkmodelProxy.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_pkshow.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_QHmaster.cs" />
+    <Compile Include="Qsmy\ui\a3\A3_QuickOp.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_rank.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_ranking.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_RankModel.cs" />
+    <Compile Include="Qsmy\ui\a3\A3_RankProxy.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_Recharge.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_relive.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_resetlvl.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_resetLvLSuccess.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_runeopen.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_runestone.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_runestonetip.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_sevenday.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_sign.cs" />
+    <Compile Include="Qsmy\ui\a3\A3_SignModel.cs" />
+    <Compile Include="Qsmy\ui\a3\A3_signProxy.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_skillopen.cs" />
+    <Compile Include="Qsmy\ui\a3\A3_SlayDragon.cs" />
+    <Compile Include="Qsmy\ui\a3\A3_Smithy.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_SpeedTeam.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_sports.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_store.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_summoninfo.cs" />
+    <Compile Include="Qsmy\ui\a3\A3_SummonModel.cs" />
+    <Compile Include="Qsmy\ui\a3\A3_SummonProxy.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_summon_lianxie.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_summon_new.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_summon_ronghe.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_summon_shouhun.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_summon_shuxing.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_summon_tujian.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_summon_tunshi.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_summon_xilian.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_systemSetting.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_targetinfo.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_task .cs" />
+    <Compile Include="Qsmy\ui\a3\a3_taskModel.cs" />
+    <Compile Include="Qsmy\ui\a3\A3_TaskOpt.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_teamApplyPanel.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_teamInvitedPanel.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_teamPanel.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_timegifs.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_trrigerDialog.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_wantlvup.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_warehouse.cs" />
+    <Compile Include="Qsmy\model\RechargeModel.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_washredname.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_Winginfo.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_ygyiwu.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_yiling.cs" />
+    <Compile Include="Qsmy\ui\a3\cd.cs" />
+    <Compile Include="Qsmy\ui\a3\confirmtext.cs" />
+    <Compile Include="Qsmy\ui\a3\dialog.cs" />
+    <Compile Include="fight\PkmodelAdmin.cs" />
+    <Compile Include="Qsmy\ui\a3\HudunModel.cs" />
+    <Compile Include="Qsmy\ui\a3\npctalk.cs" />
+    <Compile Include="Qsmy\ui\a3\piliang_chushou.cs" />
+    <Compile Include="Qsmy\ui\a3\piliang_fenjie.cs" />
+    <Compile Include="Qsmy\ui\a3\returnbt.cs" />
+    <Compile Include="Qsmy\ui\a3\ride_cd.cs" />
+    <Compile Include="Qsmy\ui\a3\Shop_a3Model.cs" />
+    <Compile Include="Qsmy\model\SignModel.cs" />
+    <Compile Include="Qsmy\model\SkillModel.cs" />
+    <Compile Include="Qsmy\ui\a3\Shop_a3Proxy.cs" />
+    <Compile Include="Qsmy\ui\a3\Skill_a3Model.cs" />
+    <Compile Include="Qsmy\model\TaskModel.cs" />
+    <Compile Include="Qsmy\model\WeaponModel.cs" />
+    <Compile Include="Qsmy\proxy\BaseProxy.cs" />
+    <Compile Include="Qsmy\proxy\BagProxy.cs" />
+    <Compile Include="Qsmy\proxy\BattleProxy.cs" />
+    <Compile Include="Qsmy\proxy\ChatProxy.cs" />
+    <Compile Include="Qsmy\proxy\EquipProxy.cs" />
+    <Compile Include="Qsmy\proxy\E_mailProxy.cs" />
+    <Compile Include="Qsmy\proxy\FriendProxy.cs" />
+    <Compile Include="Qsmy\proxy\Friend_searchProxy.cs" />
+    <Compile Include="Qsmy\proxy\GeneralProxy.cs" />
+    <Compile Include="Qsmy\proxy\GiftCardProxy.cs" />
+    <Compile Include="Qsmy\proxy\LevelProxy.cs" />
+    <Compile Include="Qsmy\proxy\Lottery_drawProxy.cs" />
+    <Compile Include="Qsmy\proxy\LotteryProxy.cs" />
+    <Compile Include="Qsmy\proxy\MapProxy.cs" />
+    <Compile Include="Qsmy\proxy\MoveProxy.cs" />
+    <Compile Include="Qsmy\proxy\OffLineExpProxy.cs" />
+    <Compile Include="Qsmy\proxy\PlayerInfoProxy.cs" />
+    <Compile Include="Qsmy\proxy\ProxyAutoRun.cs" />
+    <Compile Include="Qsmy\proxy\RankingProxy.cs" />
+    <Compile Include="Qsmy\proxy\RechargeProxy.cs" />
+    <Compile Include="Qsmy\proxy\SignProxy.cs" />
+    <Compile Include="Qsmy\proxy\TaelsProxy.cs" />
+    <Compile Include="Qsmy\proxy\TaskProxy.cs" />
+    <Compile Include="Qsmy\proxy\VipProxy.cs" />
+    <Compile Include="Qsmy\proxy\SettingsProxy.cs" />
+    <Compile Include="Qsmy\proxy\MJJDProxy.cs" />
+    <Compile Include="Qsmy\tempSC\CameraAniTempCS.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_bag.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_createcha.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_equip.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_equipsell.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_equiptip.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_expbar.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_functionbar.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_herohead.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_pet_desc.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_role.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_selectcha.cs" />
+    <Compile Include="Qsmy\ui\a3\shop_a3.cs" />
+    <Compile Include="Qsmy\ui\a3\skill_a3.cs" />
+    <Compile Include="Qsmy\ui\a3\Skill_a3Proxy.cs" />
+    <Compile Include="Qsmy\ui\a3\teachline.cs" />
+    <Compile Include="Qsmy\ui\a3\tragethead.cs" />
+    <Compile Include="Qsmy\ui\a3\TransmitPanel.cs" />
+    <Compile Include="Qsmy\ui\a3\worldmap.cs" />
+    <Compile Include="Qsmy\ui\a3\worldmapsubwin.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_vip.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_wing_skin.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_achievement.cs" />
+    <Compile Include="Qsmy\ui\a3\npctasktalk.cs" />
+    <Compile Include="Qsmy\ui\a3\a3_task_auto .cs" />
+    <Compile Include="Qsmy\ui\a3\a3_shejiao.cs" />
+    <Compile Include="Qsmy\ui\a3\A3_EntrustOpt.cs" />
+    <Compile Include="Qsmy\ui\base\PicText.cs" />
+    <Compile Include="Qsmy\ui\base\BaseButton.cs" />
+    <Compile Include="Qsmy\ui\broadcasting.cs" />
+    <Compile Include="Qsmy\ui\fb\a3_fb_finish.cs" />
+    <Compile Include="Qsmy\ui\a1_gamejoy.cs" />
+    <Compile Include="Qsmy\ui\LWidget\LMovieClip.cs" />
+    <Compile Include="Qsmy\ui\LWidget\LPageItem.cs" />
+    <Compile Include="Qsmy\ui\LWidget\LRichText.cs" />
+    <Compile Include="Qsmy\ui\LWidget\LScrollPage.cs" />
+    <Compile Include="Qsmy\ui\LWidget\LScrollPageMark.cs" />
+    <Compile Include="Qsmy\ui\cdtime.cs" />
+    <Compile Include="Qsmy\ui\fightText\combo_txt.cs" />
+    <Compile Include="Qsmy\tempSC\FightAniTempSC.cs" />
+    <Compile Include="Qsmy\tempSC\FightAniUserTempSC.cs" />
+    <Compile Include="Qsmy\tempSC\IFightAniTempSC.cs" />
+    <Compile Include="Qsmy\ui\fb\MapModel.cs" />
+    <Compile Include="Qsmy\tempSC\FightTextTempSC.cs" />
+    <Compile Include="Qsmy\ui\fb_lose.cs" />
+    <Compile Include="Qsmy\ui\fightText\pk_notify.cs" />
+    <Compile Include="Qsmy\ui\fightText\wait_loading.cs" />
+    <Compile Include="Qsmy\ui\fightText\flytxt.cs" />
+    <Compile Include="Qsmy\proxy\SkillProxy.cs" />
+    <Compile Include="Qsmy\ui\beginloading.cs" />
+    <Compile Include="Qsmy\ui\creatchar.cs" />
+    <Compile Include="Qsmy\ui\debug.cs" />
+    <Compile Include="Qsmy\ui\disconect.cs" />
+    <Compile Include="Qsmy\ui\fightText\FightText.cs" />
+    <Compile Include="Qsmy\ui\IconImageMgr.cs" />
+    <Compile Include="Qsmy\ui\InterfaceMgr.cs" />
+    <Compile Include="Qsmy\ui\joystick.cs" />
+    <Compile Include="Qsmy\ui\loading_cloud.cs" />
+    <Compile Include="Qsmy\ui\login\login.cs" />
+    <Compile Include="Qsmy\ui\login\choose_server.cs" />
+    <Compile Include="Qsmy\ui\mail_paper.cs" />
+    <Compile Include="Qsmy\ui\maploading.cs" />
+    <Compile Include="Qsmy\ui\monster_direction.cs" />
+    <Compile Include="Qsmy\ui\MsgBoxMgr.cs" />
+    <Compile Include="Qsmy\ui\newbie.cs" />
+    <Compile Include="Qsmy\ui\plot_linkui.cs" />
+    <Compile Include="Qsmy\ui\sdkloading.cs" />
+    <Compile Include="Qsmy\ui\off_line_exp.cs" />
+    <Compile Include="Qsmy\ui\storydialog.cs" />
+    <Compile Include="Qsmy\ui\storyui\relive.cs" />
+    <Compile Include="Qsmy\ui\storyui\story_returnbt.cs" />
+    <Compile Include="Qsmy\ui\UIDark.cs" />
+    <Compile Include="Qsmy\ui\UIMoveToPoint.cs" />
+    <Compile Include="Qsmy\utils\HeroUtils.cs" />
+    <Compile Include="Qsmy\utils\MonsterUtils.cs" />
+    <Compile Include="Qsmy\ui\a3\ride_a3.cs" />
+    <Compile Include="role\ai\StateAttack.cs" />
+    <Compile Include="role\ai\StateAutoMoveToPos.cs" />
+    <Compile Include="role\ai\StateBase.cs" />
+    <Compile Include="role\ai\StateCollect.cs" />
+    <Compile Include="role\ai\StateDie.cs" />
+    <Compile Include="role\ai\StateGlobal.cs" />
+    <Compile Include="role\ai\StateIdle.cs" />
+    <Compile Include="role\ai\StateInit.cs" />
+    <Compile Include="role\ai\StateMachine.cs" />
+    <Compile Include="role\ai\StateMove.cs" />
+    <Compile Include="role\ai\StateMoveLine.cs" />
+    <Compile Include="role\ai\StatePick.cs" />
+    <Compile Include="role\ai\StatePK.cs" />
+    <Compile Include="role\ai\StateProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="role\ai\StateSearch.cs" />
+    <Compile Include="role\ai\StateWait.cs" />
+    <Compile Include="role\BaseRole.cs" />
+    <Compile Include="role\BrokenIten.cs" />
+    <Compile Include="role\change_judian.cs" />
+    <Compile Include="role\city_War.cs" />
+    <Compile Include="role\effect\skill3003_Perlin.cs" />
+    <Compile Include="role\GameEventTrigger.cs" />
+    <Compile Include="role\HiddenItem.cs" />
+    <Compile Include="role\monster\M00000.cs" />
+    <Compile Include="role\monster\CollectRole.cs" />
+    <Compile Include="role\monster\M000P2.cs" />
+    <Compile Include="role\monster\M000P3.cs" />
+    <Compile Include="role\monster\M000P5.cs" />
+    <Compile Include="role\monster\M10001.cs" />
+    <Compile Include="role\monster\M10002.cs" />
+    <Compile Include="role\monster\M10003.cs" />
+    <Compile Include="role\monster\M10005.cs" />
+    <Compile Include="role\monster\MDC000.cs" />
+    <Compile Include="role\monster\MonsterPlayer.cs" />
+    <Compile Include="role\monster\MonsterRole.cs" />
+    <Compile Include="role\monster\MS0000.cs" />
+    <Compile Include="role\npc\NpcMgr.cs" />
+    <Compile Include="role\npc\NpcRole.cs" />
+    <Compile Include="role\OpenDoor109.cs" />
+    <Compile Include="role\OpenDoor110.cs" />
+    <Compile Include="role\OpenDoor111.cs" />
+    <Compile Include="role\jdzc_zhandian.cs" />
+    <Compile Include="role\OtherPlayerMgr.cs" />
+    <Compile Include="role\profession\P2Warrior.cs" />
+    <Compile Include="role\profession\P3Mage.cs" />
+    <Compile Include="role\profession\P4Archer.cs" />
+    <Compile Include="role\profession\P5Assassin.cs" />
+    <Compile Include="role\profession\ProfessionAvatar.cs" />
+    <Compile Include="role\profession\ProfessionRole.cs" />
+    <Compile Include="role\proMonster\ohterP2Warrior.cs" />
+    <Compile Include="role\proMonster\ohterP3Mage.cs" />
+    <Compile Include="role\proMonster\ohterP5Assassin.cs" />
+    <Compile Include="role\RoleStateHelper.cs" />
+    <Compile Include="role\TriggerHanldePoint.cs" />
+    <Compile Include="role\ChangePoint.cs" />
+    <Compile Include="role\MonsterMgr.cs" />
+    <Compile Include="role\PetBirdMgr.cs" />
+    <Compile Include="role\SelfRole.cs" />
+    <Compile Include="role\WdsyOpenDoor.cs" />
+    <Compile Include="scene\SceneFXMgr.cs" />
+    <Compile Include="scene\SceneTFX.cs" />
+    <Compile Include="UI\DisplayUtil.cs" />
+    <Compile Include="UI\LGUIImpls\LGUIMainUIImpl.cs" />
+    <Compile Include="UI\muUIClient.cs" />
+    <Compile Include="UI\UIName.cs" />
+    <Compile Include="util\Algorithm.cs" />
+    <Compile Include="util\ClientErrorCode.cs" />
+    <Compile Include="util\DeathShader\DeathShader.cs" />
+    <Compile Include="util\GAME_EVENT.cs" />
+    <Compile Include="util\GAME_UI_EVENT.cs" />
+    <Compile Include="util\GameConstant.cs" />
+    <Compile Include="util\logicDataEvent.cs" />
+    <Compile Include="util\NavmeshUtils.cs" />
+    <Compile Include="util\OBJECT_NAME.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="copyPdb.bat" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>../../copyPdb.bat</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
